@@ -30,7 +30,7 @@ pub fn counter_instruction(
 ) -> ProgramResult {
     let acc = next_account_info(&mut accounts.iter())?; 
 
-    // coverting bytes to structs
+    // converting bytes to structs
     let instruction_type = InstructionType::try_from_slice(instruction_data)?;
 
     let mut counter_data:Counter = Counter::try_from_slice(&acc.data.borrow())?;
